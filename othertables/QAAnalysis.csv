@@ -1,0 +1,99 @@
+Title,QA1: Clear statement of aims and objectives,QA2: Appropriateness of research design,QA3: Rigor of data analysis,QA4: Clarity of findings,QA5: Description of research context,QA6:Reproducibility,TOTAL
+A Deep Ensemble Approach for Lung Disease Classification in Chest X-Ray Across Data Distribution Shifts and Unseen Data Generalization,1,"0,5","0,5",1,"0,5","0,5",4
+activate and reject: towards safe domain generalization under category shift,1,1,"0,5",1,1,"0,5",5
+Advancing Open-Set Domain Generalization Using Evidential Bi-Level Hardest Domain Scheduler,1,1,1,1,1,1,6
+AGREE TO DISAGREE: DIVERSITY THROUGH DISAGREEMENT FOR BETTER TRANSFERABILITY,1,"0,5","0,5",1,"0,5",1,"4,5"
+AHA: Human-Assisted Out-of-Distribution Generalization and Detection,1,1,1,1,1,1,6
+Anomaly Detection under Distribution Shift,1,1,"0,5",1,1,1,"5,5"
+Are We Ready for Out-of-Distribution Detection in Digital Pathology?,1,1,"0,5",1,1,1,"5,5"
+ATTA: Anomaly-aware test-time adaptation for OOD detection,1,1,"0,5",1,1,1,"5,5"
+Bayesian Deep Learning Detection of Anomalies and Failure: Application To Medical Images,1,"0,5","0,5","0,5","0,5","0,5","3,5"
+Bayesian uncertainty estimation for detection of long-tailed and unseen conditions in medical images,1,"0,5","0,5",1,1,"0,5","4,5"
+Bias in Unsupervised Anomaly Detection in Brain MRI,1,"0,5",1,1,1,0,"4,5"
+Bridging OOD Detection and Generalization: A Graph-Theoretic View,0,1,"0,5","0,5",1,1,4
+Can you trust predictive uncertainty under real dataset shifts in DP?,1,1,1,1,1,"0,5","5,5"
+CROSSMATCH: CROSS-CLASSIFIER CONSISTENCY REGULARIZATION FOR OPEN-SET SINGLE DOMAIN GENERALIZATION,1,1,"0,5","0,5",1,"0,5","4,5"
+CSI: Novelty detection via contrastive learning,1,1,1,1,1,1,6
+DIBS: Diversity Inducing Information Bottleneck in Model Ensembles,1,1,"0,5","0,5",1,"0,5","4,5"
+DiffAug: A Diffuse-and-Denoise Augmentation for Training Robust Classifiers,1,1,1,1,1,1,6
+Dissecting Out-of-Distribution Detection and Open-Set Recognition: A Critical Analysis of Methods and Benchmarks,"0,5",1,"0,5",1,1,1,5
+Diversified Ensemble of Independent Sub-networks for Robust Self-supervised Representation Learning,1,"0,5","0,5",1,1,"0,5","4,5"
+Does your dermatology classifier know what it doesn't know? Detecting the long-tail of unseen conditions,1,1,"0,5",1,"0,5",0,4
+Domain Expansion and Boundary Growth for Open-Set Single-Source Domain Generalization,1,1,"0,5",1,1,"0,5",5
+DynaOOD-Net: Dynamic Progressive Feature Fusion and Energy Balancing for Robust Out-of-Distribution Detection,1,"0,5","0,5",1,1,"0,5","4,5"
+Energy-based open-world uncertainty modeling for confidence calibration,1,"0,5","0,5","0,5",1,"0,5",4
+Enhancing decision support in crop production: Analyzing conformal prediction for uncertainty quantification,1,"0,5","0,5","0,5",1,1,"4,5"
+Enhancing Out-of-Distribution Detection Under Covariate Shifts: A Full-Spectrum Contrastive Denoising Framework,1,1,"0,5",1,1,"0,5",5
+Feature-Space Semantic Invariance: Enhanced OOD Detection for Open-Set Domain Generalization,1,"0,5",0,"0,5","0,5","0,5",3
+Federated Open-Set Domain Generalization with Adaptive Adjustment Boundary and Weights,1,1,1,"0,5",1,"0,5",5
+Feed Two Birds with One Scone: Exploiting Wild Data for Both Out-of-Distribution Generalization and Detection,1,1,"0,5",1,"0,5",1,5
+Few-shot out-of-distribution detection for automated screening in retinal OCT images using deep learning,1,1,1,1,1,0,5
+FOOGD: Federated Collaboration for Both Out-of-distribution Generalization and Detection,1,1,"0,5",1,1,1,"5,5"
+Foundation Models and Fine-Tuning: A Benchmark for Out of Distribution Detection,1,1,"0,5",1,1,1,"5,5"
+Full-Spectrum Out-of-Distribution Detection,1,"0,5","0,5","0,5",1,1,"4,5"
+Function-Space Regularization in Neural Networks: A Probabilistic Perspective,1,1,"0,5",1,1,1,"5,5"
+Gated Information Bottleneck for Generalization in Sequential Environments,1,"0,5","0,5",1,0,1,4
+Generalising uncertainty improves accuracy and safety of deep learning analytics applied to oncology,1,"0,5",1,1,1,0,"4,5"
+Generalizable decision boundaries: Dualistic meta-learning for open set domain generalization,1,"0,5","0,5",1,"0,5",1,"4,5"
+Generalize or Detect? Towards Robust Semantic Segmentation Under Multiple Distribution Shifts,1,1,"0,5",1,"0,5",1,5
+HybridAugment++: Unified Frequency Spectra Perturbations for Model Robustness,1,1,"0,5",1,"0,5",1,5
+Industrial anomaly detection with domain shift: A real-world dataset and masked multi-scale reconstruction,1,1,0,1,1,1,5
+InfoBound: A Provable Information-Bounds Inspired Framework for Both OoD Generalization and OoD Detection,1,1,1,1,"0,5","0,5",5
+Interaction of Generalization and Out-of-Distribution Detection Capabilities in Deep Neural Networks,1,"0,5","0,5",1,1,"0,5","4,5"
+Learning class and domain augmentations for single-source open-DG,1,"0,5","0,5",1,1,"0,5","4,5"
+Leveraging Registers in Vision Transformers for Robust Adaptation,1,"0,5","0,5",1,1,"0,5","4,5"
+MADOD: Generalizing OOD Detection to Unseen Domains via G-Invariance Meta-Learning,1,1,"0,5",1,1,1,"5,5"
+Mitigating covariance overfitting in out-of-distribution detection through intrinsic parameter learning,1,1,1,1,1,1,6
+Mitigating Distributional Shift in Semantic Segmentation via Uncertainty Estimation From Unlabeled Data,1,1,1,1,,"0,5","4,5"
+Multiple Class Novelty Detection Under Data Distribution Shift,1,1,1,1,1,"0,5","5,5"
+NEURON ACTIVATION COVERAGE: RETHINKING OUT-OF-DISTRIBUTION DETECTION AND GENERALIZATION,1,"0,5","0,5",1,1,1,5
+On the robustness of open-world test-time training: Self-training with dynamic prototype expansion,1,1,1,1,1,1,6
+open domain generalization with domain-augmented meta-learning,1,"0,5","0,5",1,1,"0,5","4,5"
+Open Set Recognition in Real World,1,"0,5","0,5","0,5",1,1,"4,5"
+OPEN-SET DOMAIN GENERALIZATION VIA METRIC LEARNING,"0,5","0,5","0,5",1,1,"0,5",4
+Open-set learning under covariate shift,1,"0,5",1,1,1,"0,5",5
+OpenMIBOOD: Open Medical Imaging Benchmarks for Out-Of-Distribution Detection,1,"0,5",1,1,1,1,"5,5"
+OpenOOD v1.5: Enhanced benchmark for out-of-distribution detection,1,1,1,1,1,1,6
+"Out of Distribution Detection, Generalization, and Robustness Triangle with Maximum Probability Theorem",1,"0,5","0,5","0,5",1,"0,5",4
+Out-of-Distribution (OOD) Detection and Generalization Improved by Augmenting Adversarial Mixup Samples,1,"0,5",1,1,1,"0,5",5
+Out-of-distribution detection in digital pathology: Do foundation models bring the end to reconstruction-based approaches?,1,1,1,1,1,"0,5","5,5"
+Out-of-Distribution Learning with Human Feedback,1,"0,5","0,5",1,1,"0,5","4,5"
+Out-of-Distribution Segmentation in Autonomous Driving: Problems and State of the Art,1,0,0,"0,5",1,"0,5",3
+"Percept, Memory, and Imagine: World Feature Simulating for Open-Domain Unknown Object Detection",1,1,1,1,1,1,6
+Pixel-wise energy-biased abstention learning for anomaly segmentation,1,"0,5","0,5",1,1,1,5
+Placing Objects in Context via Inpainting for Out-of-Distribution Segmentation,1,1,"0,5",1,1,1,"5,5"
+Posterior Network: Uncertainty Estimation without OOD Samples via Density-Based Pseudo-Counts,1,"0,5","0,5","0,5",1,1,"4,5"
+predictive sample assignment for semantically coherent out-of-distribution detection,1,"0,5",1,1,1,1,"5,5"
+Prototype Governed Contrastive Learning for Robust Image Classification in Histopathology,1,"0,5","0,5",1,1,"0,5","4,5"
+Quantifying uncertainty in lung cancer segmentation with foundation models applied to mixed-domain datasets,1,"0,5","0,5",1,1,"0,5","4,5"
+RegMixup: Mixup as a Regularizer Can Surprisingly Improve Accuracy & Out-of-Distribution Robustness,1,"0,5","0,5",1,1,1,5
+Reliability in Semantic Segmentation: Can We Use Synthetic Data?,1,"0,5","0,5",1,1,1,5
+Reliable and Trustworthy Machine Learning for Health Using Dataset Shift Detection,1,"0,5","0,5",1,1,"0,5","4,5"
+Rethinking the Evaluation of Out-of-Distribution Detection: A Sorites Paradox,1,"0,5","0,5",1,1,1,5
+Revisiting Confidence Estimation: Towards Reliable Failure Prediction,1,"0,5",1,1,1,1,"5,5"
+ROADS: Robust Prompt-Driven Multi-Class Anomaly Detection Under Domain Shift,1,"0,5","0,5",1,1,"0,5","4,5"
+Robust Uncertainty-Informed Glaucoma Classification Under Data Shift,1,"0,5",1,1,1,"0,5",5
+Robustness to Spurious Correlations Improves Semantic Out-of-Distribution Detection,1,1,1,1,1,1,6
+ROOD-MRI: Robustness of Segmentation to OOD & Corrupted MRI Data,1,1,1,1,1,1,6
+Self-knowledge distillation via dropout,1,"0,5","0,5","0,5",1,"0,5",4
+Semantic Novelty Detection via&#xa0;Relational Reasoning,1,"0,5",1,1,1,1,"5,5"
+Semantically Coherent Out-of-Distribution Detection,1,1,1,1,1,1,6
+Semantically Guided Gradient Matching for Open-Set Domain Generalization,1,"0,5","0,5",1,1,"0,5","4,5"
+Semi-Supervised Domain Generalization with Known and Unknown Classes,1,"0,5","0,5",1,1,"0,5","4,5"
+Simple Domain Generalization Methods are Strong Baselines for Open Domain Generalization,1,"0,5","0,5",1,1,1,5
+SLX: Similarity Learning for X-Ray Screening and Robust Automated Disassembled Object Detection,1,"0,5","0,5",1,1,0,4
+SOoD: Self-Supervised Out-of-Distribution Detection Under Domain Shift for Multi-Class Colorectal Cancer Tissue Types,1,1,1,1,1,1,6
+STAMP: Outlier-Aware Test-Time Adaptation with Stable Memory Replay,1,1,"0,5",1,1,1,"5,5"
+Tackling Distribution Shifts in Task-Oriented Communication With Information Bottleneck,1,1,"0,5","0,5",1,1,5
+Test Time Transform Prediction for&#xa0;Open Set Histopathological Image Recognition,1,1,"0,5",1,1,1,"5,5"
+The Best of Both Worlds: On the Dilemma of Out-of-distribution Detection,1,"0,5",1,1,1,1,"5,5"
+The Effect of Covariate Shift and Network Training on Out-of-Distribution Detection,1,"0,5",1,1,1,1,"5,5"
+Towards Building Self-Aware Object Detectors via Reliable Uncertainty Quantification and Calibration,1,"0,5","0,5",1,1,1,5
+UGainS: Uncertainty Guided Anomaly Instance Segmentation,1,"0,5","0,5",1,1,1,5
+Uncertainty Quantification Based on Block Masking of Test Images,1,"0,5",0,1,1,1,"4,5"
+Uncertainty-Aware Optimal Transport for Semantically Coherent Out-of-Distribution Detection,1,"0,5",1,1,1,1,"5,5"
+Unexplored Faces of Robustness and Out-of-Distribution: Covariate Shifts in Environment and Sensor Domains,1,0,"0,5",1,1,1,"4,5"
+Unified Entropy Optimization for Open-Set Test-Time Adaptation,1,"0,5","0,5",1,1,1,5
+Unified Out-Of-Distribution Detection: A Model-Specific Perspective,1,"0,5",1,1,1,"0,5",5
+Unveiling the unseen: novel strategies for object detection beyond known distributions,1,"0,5","0,5",1,1,1,5
+your data is not perfect: towards cross-domain out-of-distribution detection in class-imbalanced data,1,"0,5","0,5",1,1,"0,5","4,5"
