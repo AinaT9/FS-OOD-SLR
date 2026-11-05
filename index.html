@@ -1,30 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FS-OOD Systematic Review</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full-Spectrum OOD detection — A literature review</title>
+  <meta name="description" content="Consult the papers, methods, statistics and open-source resources from a literature review of full-spectrum out-of-distribution (OOD) detection." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" />
+  <style>
+/* OD-LAYOUT-PRIMITIVES v1 — structure only: display, flex/grid, overflow, wrapping, ratio, geometry.
+   Put this @layer first; product CSS outside the layer wins ordinary layout rules.
+   Native hidden and closed-dialog states take precedence over component display rules. */
+@layer od-layout {
+  [hidden]:not([hidden="until-found" i]) { display: none !important; }
+  dialog:not([open]) { display: none !important; }
 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.3.1/css/tabulator.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  :where(.od-stack,.od-row,.od-row-top,.od-cluster,.od-grid,.od-field,.od-stat,.od-cell,.od-tile) > :where(*) { min-width: 0; }
+
+  /* containers */
+  .od-stack   { display: flex; flex-direction: column; gap: var(--od-gap, 8px); }
+  .od-row     { display: flex; align-items: center; gap: var(--od-gap, 8px); }
+  .od-row-top { display: flex; align-items: flex-start; gap: var(--od-gap, 8px); }
+  .od-cluster { display: flex; flex-wrap: wrap; align-items: center; gap: var(--od-gap, 8px); }
+  .od-fill    { flex: 1 1 0; min-width: 0; }
+  .od-fixed   { flex: none; }
+  .od-grid    { display: grid; gap: var(--od-gap, 12px); grid-template-columns: repeat(var(--od-cols, 3), minmax(0, 1fr)); }
+
+  /* stacked information: each piece is its own line — never sibling inline spans */
+  .od-stat, .od-field, .od-cell { display: grid; gap: var(--od-gap, 2px); }
+  :where(.od-stat,.od-field,.od-cell) > :where(*) { display: block; }
+  .od-tile { display: grid; grid-template-rows: auto 1fr; }
+  :where(.od-tile) > :where(*) { display: block; }
+
+  /* media keeps its intrinsic ratio by default; never a distorted or cropped
+     cover by accident. height:auto lets the ratio win over an <img height="…">
+     attribute. Cropping to a uniform box is an explicit opt-in: set --od-ratio
+     AND add .od-media-cover together (per the core rule, only where a crop is
+     deliberate — tile thumbs, decorative fills — never on full-frame content). */
+  .od-media { display: block; width: 100%; height: auto; aspect-ratio: var(--od-ratio, auto); }
+  .od-media-cover { object-fit: cover; }
+
+  /* functional inline SVG icons opt into bounded geometry; content SVGs keep their own */
+  .od-icon { display: inline-block; inline-size: var(--od-icon-size, 1em); block-size: var(--od-icon-size, 1em); flex: none; }
+
+  /* data text only — authored copy is rewritten to its budget instead */
+  .od-truncate { display: block; max-width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+  .od-clamp-2, .od-clamp-3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+  .od-clamp-2 { -webkit-line-clamp: 2; }
+  .od-clamp-3 { -webkit-line-clamp: 3; }
+  .od-lines-2 { min-height: calc(2 * 1.4em); }   /* block-level reservation for a shared baseline */
+  .od-nowrap  { white-space: nowrap; }           /* 数字+单位 · 价格+起 · 日期+星期 */
+  .od-keep    { word-break: keep-all; overflow-wrap: anywhere; } /* CJK labels break at spaces / <wbr> first */
+
+  /* screen skeleton (optional): bars take their own space, the middle scrolls — no padding guessed for chrome */
+  .od-screen { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; height: 100%; }
+  .od-scroll { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+
+  /* horizontal rail: the next item peeks at the edge; trailing room survives overflow */
+  .od-rail { display: flex; gap: var(--od-gap, 8px); overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
+             padding-inline: var(--od-rail-pad, 16px); scroll-padding-inline: var(--od-rail-pad, 16px); }
+  .od-rail::-webkit-scrollbar { display: none; }
+  :where(.od-rail) > :where(*) { flex: none; scroll-snap-align: start; }
+  :where(.od-rail) > :where(:last-child) { margin-inline-end: var(--od-rail-pad, 16px); }
+
+  .od-spacer { flex: none; visibility: hidden; pointer-events: none; }
+  .od-touch  { min-width: 44px; min-height: 44px; }
+}
+:root [hidden]:where(:not([hidden="until-found" i])) { display: none; }
+/* /OD-LAYOUT-PRIMITIVES v1 */
+  </style>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
+  <a class="skip-link" href="#main" data-action="skip">Skip to content</a>
 
-  <main class="container">
-    <header class="page-header">
-      <h1>Full Spectrum Out-of-distribution detection Systematic Review</h1>
-    </header>
+  <div class="side-rail side-rail-left" aria-hidden="true"><span id="rail-left"></span></div>
+  <div class="side-rail side-rail-right" aria-hidden="true"><span id="rail-right"></span></div>
 
-    <div id="table-wrapper">
-      <div id="table"></div>
+  <div class="meta-strip">
+    <div class="container meta-strip-inner">
+      <span id="strip-volume"></span>
+      <span class="meta-strip-middle" id="strip-filed"></span>
+      <span class="meta-strip-status"><span class="pulse" aria-hidden="true"></span><span id="strip-status">Loading data</span></span>
     </div>
+  </div>
+
+  <div id="notice"></div>
+
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <a class="brand" href="#/overview">
+        <span class="brand-name" id="brand-name"></span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a class="nav-link" data-nav="overview" href="#/overview">Overview</a></li>
+          <li><a class="nav-link" data-nav="papers" href="#/papers">Papers</a></li>
+          <li><a class="nav-link" data-nav="methods" href="#/methods">Methods</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="app">
+      <div class="container state-block" role="status">
+        <p class="eyebrow">Loading</p>
+        <p class="state-title">Reading the review data.</p>
+        <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+    <noscript>
+      <div class="container state-block">
+        <p class="state-title">This site needs JavaScript to read its data file.</p>
+        <p><a href="data/papers.csv">Download the data as a CSV</a> instead.</p>
+      </div>
+    </noscript>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.3.1/js/tabulator.min.js"></script>
-  <script src="script.js"></script>
-</body>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-title-block">
+        <p class="footer-kicker" id="footer-review"></p>
+        <p class="footer-word" aria-hidden="true"><span id="footer-word"></span><span class="dot">.</span></p>
+      </div>
+      <div class="footer-end">
+        <a href="data/papers.csv" download>Download the data (CSV)</a>
+        <span class="footer-fin">Fin.</span>
+      </div>
+    </div>
+  </footer>
 
+  <script src="js/config.js"></script>
+  <script src="js/sample-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
 </html>

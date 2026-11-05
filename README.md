@@ -7,25 +7,7 @@ The goal of this repository is to provide:
 - Transparency of the study selection and extraction process
 - Reproducibility of the SLR workflow
 
----
 
-# Repository Structure
-
-```text
-.
-├── README.md
-├── index.html
-├── script.js
-├── style.css
-├── othertables/
-    ├── ACM.csv
-    ├── IEEE.csv
-    ├── SCOPUS.csv
-    ├── SPRINGER.csv
-    ├── WOS.csv
-    └── QAAnalysis.csv
-```
-# Dataset Description
 
 ## 1. Source Database Tables
 
