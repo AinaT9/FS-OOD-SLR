@@ -1,4 +1,4 @@
-# Towards Full-Spectrum Out-of-DISTRIBUTION: Data Repository
+# Towards Full-Spectrum Out-of-Distribution: Data Repository
 
 This repository contains the extracted tables and supporting CSV files used in the **Systematic Literature Review (SLR)** project.
 
