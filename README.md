@@ -1,4 +1,6 @@
 # Towards Full-Spectrum Out-of-Distribution: Data Repository
+Visualization of the interactive web page: https://ainat9.github.io/FS-OOD-SLR/ 
+
 
 This repository contains the extracted tables and supporting CSV files used in the **Systematic Literature Review (SLR)** project.
 
@@ -25,4 +27,3 @@ The `othertables/` directory contains the original CSV exports collected from th
 
 These tables preserve the original metadata retrieved from each source database.
 
-Visualization of the table of selected studies: https://ainat9.github.io/FS-OOD-SLR/ 
