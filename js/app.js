@@ -500,7 +500,6 @@
     const stats = [
       [papers.length.toLocaleString('en'), papers.length === 1 ? 'paper reviewed' : 'papers reviewed'],
       [span, 'publication years'],
-      [tally(papers, 'category').length, 'method categories'],
       [tally(papers, 'country').length, 'countries'],
       [tally(papers, 'institution').length, 'institutions'],
     ].filter((s) => s[0]);
@@ -828,21 +827,20 @@
             <div class="record-group">
               <h2 class="record-group-title">Coded findings</h2>
               <dl>
-                ${recordText(paper, 'purposeText', paper.f.purposeText)}
+               
                 ${recordValues(paper, 'purpose')}
-                ${recordValues(paper, 'methods')}
-                ${recordValues(paper, 'category')}
+                ${recordValues(paper, 'secondDimension')}
                 ${recordValues(paper, 'category2')}
                 ${recordValues(paper, 'tasks')}
                 ${recordValues(paper, 'oodRange')}
                 ${recordValues(paper, 'compares')}
+                ${recordValues(paper, 'id')}
                 ${recordValues(paper, 'covariate')}
                 ${recordValues(paper, 'semantic')}
                 ${recordValues(paper, 'metrics')}
                 ${recordValues(paper, 'applications')}
               </dl>
             </div>
-            ${extras}
           </div>
 
           <div class="side-rec">
@@ -856,7 +854,6 @@
                 ${recordText(paper, 'doi', paper.doi)}
                 ${recordValues(paper, 'country')}
                 ${recordValues(paper, 'institution')}
-                ${recordValues(paper, 'keywords')}
               </dl>
             </div>
             <div class="record-group">
@@ -879,12 +876,12 @@
 
   function crosstabHtml(dim) {
     const papers = state.data.papers;
-    const rows = tally(papers, 'category');
+    const rows = tally(papers, 'secondDimension');
     const cols = tally(papers, dim).slice(0, 8);
     if (!rows.length || !cols.length) {
       return '<p class="state-text">There are no values to compare for this choice.</p>';
     }
-    const count = (row, col) => papers.filter((p) => p.m.category.includes(row) && p.m[dim].includes(col)).length;
+    const count = (row, col) => papers.filter((p) => p.m.secondDimension.includes(row) && p.m[dim].includes(col)).length;
     const cells = rows.map((row) => cols.map((col) => count(row.value, col.value)));
     const max = Math.max(1, ...cells.flat());
 
@@ -892,7 +889,7 @@
       <div class="table-scroll" role="region" aria-label="Method categories compared with ${esc(label(dim))}" tabindex="0">
         <table class="crosstab">
           <thead>
-            <tr><th scope="col">Method category</th>${cols.map((col) => `<th scope="col">${esc(col.value)}</th>`).join('')}</tr>
+            <tr><th scope="col">${esc(label('secondDimension'))}</th>${cols.map((col) => `<th scope="col">${esc(col.value)}</th>`).join('')}</tr>
           </thead>
           <tbody>
             ${rows.map((row, r) => `
@@ -902,7 +899,7 @@
                   const n = cells[r][c];
                   if (!n) return '<td><span class="cell cell-0">0</span></td>';
                   const level = Math.max(1, Math.ceil((n / max) * 5));
-                  return `<td><a class="cell cell-${level}" href="${esc(filterHref({ category: row.value, [dim]: col.value }))}" aria-label="${esc(row.value)} and ${esc(col.value)}: ${esc(plural(n, 'paper'))}">${n}</a></td>`;
+                  return `<td><a class="cell cell-${level}" href="${esc(filterHref({ secondDimension: row.value, [dim]: col.value }))}" aria-label="${esc(row.value)} and ${esc(col.value)}: ${esc(plural(n, 'paper'))}">${n}</a></td>`;
                 }).join('')}
               </tr>`).join('')}
           </tbody>
@@ -946,8 +943,7 @@
     const papers = state.data.papers;
     const categories = tally(papers, 'category');
     const dims = C.crosstabDimensions.filter((key) => hasData(key));
-    if (!dims.includes(state.dim)) state.dim = dims.includes('secondDimension') ? 'secondDimension' : (dims[0] || null);
-
+    if (!dims.includes(state.dim)) state.dim = dims[0] || null; 
     const crosstab = categories.length && state.dim ? `
       <div class="field crosstab-controls">
         <label class="field-label" for="dim-select">Compare categories by</label>

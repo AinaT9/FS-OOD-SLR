@@ -69,12 +69,13 @@ window.SITE_CONFIG = {
     methods: { column: 'RQ2 :What methods are used?', label: 'Methods used', split: ';' },
     category: { column: 'RQ2: Categorization', label: 'Method category', split: ';' },
     category2: { column: 'RQ2:CATEGORIZATION2', label: 'Detection Stage Dimension', split: ';' },
-    secondDimension: { column: 'RQ2: Second Dimension', label: 'Second Dimension', split: ';,' },
+    secondDimension: { column: 'RQ2: Second Dimension', label: 'Methodological Objective Dimension', split: ';,' },
     oodRange: { column: 'Near OOD vs Far OOD?', label: 'Near vs far OOD', split: ';' },
     compares: { column: 'compare with other OOD methods?', label: 'Compared with other OOD methods', split: ';' },
-    tasks: { column: 'What methods are used for classification, segmentation...?', label: 'Task', split: ';' },
-    covariate: { column: 'COVARIATE SHIFT', label: 'Covariate shift', split: ';' },
-    semantic: { column: 'SEMANTIC SHIFT', label: 'Semantic shift', split: ';' },
+    tasks: { column: 'What methods are used for classification, segmentation...?', label: 'Models used for training', split: ';' },
+    id: { column: 'ID', label: 'ID dataset', split: ';' },
+    covariate: { column: 'COVARIATE SHIFT', label: 'Covariate shift dataset', split: ';' },
+    semantic: { column: 'SEMANTIC SHIFT', label: 'Semantic shift dataset', split: ';' },
     metrics: { column: 'RQ7: Metrics', label: 'Metrics', split: ';,' },
     applications: { column: 'RQ8: Applications', label: 'Applications', split: ';,' },
     code: { column: 'RQ9: Open-source implementations', label: 'Open-source implementation', split: ';' },
@@ -105,7 +106,7 @@ window.SITE_CONFIG = {
   methodProfile: ['purpose', 'category2', 'secondDimension', 'oodRange', 'metrics', 'applications'],
 
   // What method categories can be compared against on the Methods page.
-  crosstabDimensions: ['oodRange', 'purpose', 'metrics', 'applications', 'secondDimension', 'code'],
+  crosstabDimensions: ['oodRange', 'purpose', 'metrics', 'applications','category2', 'code'],
 
   // The questions listed on the About page.
   questions: [
